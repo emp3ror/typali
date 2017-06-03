@@ -11,6 +11,10 @@ body {background: #fff;}
     font-size: 1.5em;
 }
 
+.showArea {
+    min-height: 50px;
+}
+
 .writeArea {
     border: 1px solid #c9c9c9;
     padding: 5px 10px;
@@ -58,7 +62,22 @@ body {background: #fff;}
   -webkit-animation: blink 1s step-start 0s infinite;
 }
 
+.keyboardholder {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    
+}
 
+.alert {
+    background : #F2DEDE;
+    color: #a94442;
+}
+
+.alert input {
+    background : #F2DEDE;
+    color: #F2DEDE;
+}
 
 /* 
     First Keyboad layout design forked from
@@ -67,8 +86,11 @@ body {background: #fff;}
  */
 #keyboard {
     margin: 15px auto 0;
-    width: 894px;
+    width: 900px;
     padding: 10px 0 0 10px;
+    /*left: 50%;*/
+    transform:translateX(250px);
+    display: none;
 }
 
 ul {list-style-type: none; width: 784px; margin: 0 auto;}

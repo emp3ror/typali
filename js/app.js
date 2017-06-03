@@ -1,6 +1,19 @@
 (function  ($) {
     
     var $typeArea = $("#typeArea");
+    var word = '';
+    var sentence = '';
+
+    /*strings*/
+
+    var str = "\"हुँदैन बिहान मिर्मिरेमा तारा झारेर नगए, बन्दैन मुलुक दुइ-चार सपुत मरेर नगए\" — भुपी शेरचन";
+
+    var arrString = str.split(" ");
+    var lenString = arrString.length;
+
+    var count = 0;
+
+    $(".text").text(str);
 
     /*generate keyboard*/
 
@@ -39,7 +52,7 @@
 
     console.log(engData);
 
-    var word = '';
+    
 
     $typeArea.on('keydown',function(event) {
       console.log( "key pressed = ",$(this).val() );
@@ -63,7 +76,7 @@
         $( ".word" ).text(word);
 
     } else if (code==32) {
-
+        validateWord();
     } else if (code < 20) {
 
     } else if (code == 219) {
@@ -80,7 +93,12 @@
         word += newChar;
     } else if (code == 222) {
         character = '\''
-        newChar = blablaCharachet(character,event.shiftKey);
+        if (event.shiftKey) {
+            newChar = '\"';
+        } else {
+            newChar = character
+        }
+        // newChar = blablaCharachet(character,event.shiftKey);
         word += newChar;
     } else if (code == 220) {
         character = '\\'
@@ -114,7 +132,10 @@
 
     $("#typeArea").val('');
     $( ".word" ).text(word);
+    validateQuick();
   });
+
+
 
 
 $typeArea.focus(
@@ -142,5 +163,26 @@ function blablaCharachet (character,shift) {
     return hereChar;
 }
 
+function validateQuick () {
+    var len = word.length;
+    var compareStr = arrString[count].substring(0, len);
+    
+    console.log(word,compareStr);
+
+    if (word != compareStr) {
+        $('.writeArea').addClass("alert");
+    } else {
+        $('.writeArea').removeClass("alert");
+    }
+}
+
+
+function validateWord () {
+    
+    sentence += word+" ";
+    word = '';
+    $('.showArea').text(sentence);
+    count++;
+}
 
 })(jQuery);
