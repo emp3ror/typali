@@ -1,5 +1,58 @@
 body {background: #fff;}
 
+.container {
+    width: 894px;
+    margin : 20px auto;
+    background: #f2f2f2;
+}
+
+
+.writeArea {
+    border: 1px solid #c9c9c9;
+    padding: 5px 10px;
+    background: #fff;
+}
+
+.writeArea:focus {
+     box-shadow: 10px 10px 5px #888888;
+}
+
+.writeArea .word {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.writeArea input {
+    border: none;
+    font-size: 18px;
+     outline: none;
+     color: #fff;
+}
+
+.writeArea input:focus {
+     outline: none;
+}
+
+
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+.blink {
+    display: inline-block;
+    font-size: 14px;
+    color : 878383;
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
+}
+
+
 
 /* 
     First Keyboad layout design forked from
