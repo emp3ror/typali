@@ -106,13 +106,15 @@ li {float: left;}
     font-size: 7.5pt;
     text-transform: lowercase;}
 
-#qwerty li a {
+#qwerty li a,
+#asdfg li a {
     display: block;
     position: relative;
     color: #4b4949;
 }
     
-#qwerty li a span {
+#qwerty li a span,
+#asdfg li a span {
     display: block;
     /*margin: 13px 0 0;*/
     text-transform: uppercase;}
@@ -151,11 +153,31 @@ li {float: left;}
 #qwerty li .alt b {display: block; margin: 3px 0 0;}
 #qwerty li .alt span {margin: 2px 0 0;}
 
+#asdfg li a span.en {
+    position: absolute;
+    display: inline-block;
+    color: #b86c0d;
+    top: 25px ;
+    left: 5px;
+}
 
-#asdfg li a span {
-    display: block;
-    margin: 13px 0 0;
-    text-transform: uppercase;}
+#asdfg li a span.en-shift {
+    position: absolute;
+    display: inline-block;
+    color: #b86c0d;
+    top: 5px ;
+    left: 5px;
+}
+
+#asdfg li a span.np {
+    position: absolute;
+    display: inline-block;
+    color: #000;
+    top: 20px ;
+    left: 25px;
+    font-weight: bold;
+}
+
 
 #asdfg li .alt span {margin: 0; text-transform: lowercase;}
 #asdfg li .alt b {display: block; margin: 3px 0 0;}
