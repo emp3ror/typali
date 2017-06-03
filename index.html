@@ -1,8 +1,39 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nepali typing">
+    <meta name="keywords" content="nepali, type,romanized">
+    <meta name="author" content="MJT">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Nepali typing" />
+    <meta property="og:image" content="" />
+
+    <title>नेपाल typing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="data/keyboardmap.js"></script>
 </head>
 <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="text">
+             <h2>“हुँदैन बिहान मिर्मिरेमा तारा झारेर नगए , बन्दैन मुलुक दुइ-चार सपुत मरेर नगए” — भुपी शेरचन
+             </h2> 
+            </div>
+
+            <input type="text" class="nepalify" id="typeArea">
+
+        </div>
+        <div class="row dataHolder" id="dataHolder">
+            <pre></pre>
+        </div>
+    </div>
+
     <div id="keyboard">
         <ul class="cf">
             <li><a href="#" class="key c27 fn"><span id="esc">esc</span></a></li>
@@ -38,175 +69,24 @@
         </ul>
         <ul class="cf" id="qwerty">
             <li><a href="#" class="key c9" id="tab"><span>tab</span></a></li>
-            <li>
-                <a href="#" class="key c81">
-                    <span class="en">q</span>
-                    <span class="shift">ठ</span>
-                    <span class="np">ट</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c87">
-                    <span class="en">w</span>
-                    <span class="shift">औ</span>
-                    <span class="np">ौ</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c69">
-                    <span class="en">e</span>
-                    <span class="shift">ै</span>
-                    <span class="np">े</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c82">
-                    <span class="en">r</span>
-                    <span class="shift">ृ</span>
-                    <span class="np">र</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c84">
-                    <span class="en">t</span>
-                    <span class="shift">थ</span>
-                    <span class="np">त</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c89">
-                    <span class="en">y</span>
-                    <span class="shift">ञ</span>
-                    <span class="np">य</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c85">
-                    <span class="en">u</span>
-                    <span class="shift">ू</span>
-                    <span class="np">ु</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c73">
-                    <span class="en">i</span>
-                    <span class="shift">ी</span>
-                    <span class="np">ि</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c79">
-                    <span class="en">o</span>
-                    <span class="shift">ओ</span>
-                    <span class="np">ो</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c80">
-                    <span class="en">p</span>
-                    <span class="shift">फ</span>
-                    <span class="np">प</span>
-            </a>
-        </li>
-            <li>
-                <a href="#" class="key c219 alt">
-                    <span class="en-shift">{</span>
-                    <span class="en">[</span>
-                    <span class="shift">ई</span>
-                    <span class="np">इ</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c221 alt">
-                    <span class="en-shift">}</span>
-                    <span class="en">]</span>
-                    <span class="shift">ऐ</span>
-                    <span class="np">ए</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c220 alt">
-                    <span class="en-shift">|</span>
-                    <span class="en">\</span>
-                    <span class="shift">ः</span>
-                    <span class="np">ॐ</span>
-                </a>
-            </li>
+            <span class="templateholder"></span>
+
         </ul>
         <ul class="cf" id="asdfg">
             <li>
                 <a href="#" class="key c20 alt" id="caps"><b></b>
-                    <span>caps lock</span></a></li>
-            <li>
-                <a href="#" class="key c65">
-                    <span class="en">a</span>
-                    <span class="shift">आ</span>
-                    <span class="np">ा</span>
-                </a>
+                    <span>caps lock</span></a>
             </li>
+            <span class="templateholder"></span>
             <li>
-                <a href="#" class="key c83">
-                    <span class="en">s</span>
-                    <span class="shift">श</span>
-                    <span class="np">स</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c68">
-                    <span class="en">d</span>
-                    <span class="shift">ध</span>
-                    <span class="np">द</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c70">
-                    <span class="en">f</span>
-                    <span class="shift">ऊ</span>
-                    <span class="np">उ</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c71">
-                    <span class="en">g</span>
-                    <span class="shift">घ</span>
-                    <span class="np">ग</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c72">
-                    <span class="en">h</span>
-                    <span class="shift">अ</span>
-                    <span class="np">ह</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c74">
-                    <span class="en">j</span>
-                    <span class="shift">झ</span>
-                    <span class="np">ज</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c75">
-                    <span class="en">k</span>
-                    <span class="shift">ख</span>
-                    <span class="np">क</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c76">
-                    <span class="en">l</span>
-                    <span class="shift">॥</span>
-                    <span class="np">ल</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c186 alt"><b>:</b>
+                <a href="#" class="key c186 alt">
+                    <b>:</b>
                     <span>;</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="key c222 alt"><b>"</b>
+                <a href="#" class="key c222 alt">
+                    <b>"</b>
                     <span>'</span>
                 </a>
             </li>
@@ -222,79 +102,7 @@
                     <span >Shift</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="key c90">
-                    <span class="en">z</span>
-                    <span class="shift">ऋ</span>
-                    <span class="np">ष</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c88">
-                    <span class="en">x</span>
-                    <span class="shift">ढ</span>
-                    <span class="np">ड</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c67">
-                    <span class="en">c</span>
-                    <span class="shift">च</span>
-                    <span class="np">छ</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c86">
-                    <span class="en">v</span>
-                    <span class="shift">ँ</span>
-                    <span class="np">व</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c66">
-                    <span class="en">b</span>
-                    <span class="shift">भ</span>
-                    <span class="np">ब</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c78">
-                    <span class="en">n</span>
-                    <span class="shift">ण</span>
-                    <span class="np">न</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c77">
-                    <span class="en">m</span>
-                    <span class="shift">ं</span>
-                    <span class="np">म</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c188 alt">
-                    <span class="en">,</span>
-                    <span class="en-shift">&lt;</span>
-                    <span class="shift">ङ</span>
-                    <span class="np">,</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c190 alt">
-                    <span class="en">.</span>
-                    <span class="en-shift">&gt;</span>
-                    <span class="shift"></span>
-                    <span class="np">।</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="key c191 alt">
-                    <span class="en">/</span>
-                    <span class="en-shift">?</span>
-                    <span class="shift"></span>
-                    <span class="np">्</span>
-                </a>
-            </li>
+            <span></span>
             <li>
                 <a href="#" class="key c16 shiftright">
                     <span>Shift</span>
@@ -319,5 +127,27 @@
             </ol>
         </ul>
     </div>
+
+
+    <script id="keyboardmap-template" type="text/x-handlebars-template">
+      {{#each data}}
+      
+      <li>
+            <a href="#" class="key">
+                <span class="en">{{en}}</span>
+                <span class="en-shift">{{enShift}}</span>
+                <span class="shift">{{npShift}}</span>
+                <span class="np">{{np}}</span>
+            </a>
+        </li>
+
+      {{/each}}
+    </script>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
