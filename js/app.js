@@ -65,19 +65,45 @@
 
     } else if (code < 20) {
 
-    } else {
+    } else if (code == 219) {
+        character = '['
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 221) {
+        character = ']'
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 186) {
+        character = ';'
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 222) {
+        character = '\''
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 220) {
+        character = '\\'
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 188) {
+        character = ','
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 190) {
+        character = '.'
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } else if (code == 191) {
+        character = '/'
+        newChar = blablaCharachet(character,event.shiftKey);
+        word += newChar;
+    } 
+
+
+
+    else {
         character = String.fromCharCode(code).toLowerCase();
-        if (engData.indexOf(character) > -1 ) {
-            if (event.shiftKey) {
-                newChar = allKeys[engData.indexOf(character)].npShift;    
-            } else {
-                newChar = allKeys[engData.indexOf(character)].np;
-            }
-        } else if (engData.indexOf(character.toLowerCase()) > -1) {
-            
-        } else {
-            newChar = character;
-        }
+        newChar = blablaCharachet(character,event.shiftKey);
         
         word += newChar;
 
@@ -88,6 +114,23 @@
     $("#typeArea").val('');
     $( ".word" ).text(word);
   });
+
+function blablaCharachet (character,shift) {
+    var hereChar = "";
+    if (engData.indexOf(character) > -1 ) {
+        if (shift) {
+            hereChar = allKeys[engData.indexOf(character)].npShift;    
+        } else {
+            hereChar = allKeys[engData.indexOf(character)].np;
+        }
+    } else if (engData.indexOf(character.toLowerCase()) > -1) {
+
+    } else {
+        hereChar = character;
+    }
+
+    return hereChar;
+}
 
 
 })(jQuery);
