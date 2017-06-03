@@ -105,11 +105,42 @@ li {float: left;}
     margin: 23px 10px 0 0;
     font-size: 7.5pt;
     text-transform: lowercase;}
+
+#qwerty li a {
+    display: block;
+    position: relative;
+    color: #4b4949;
+}
     
 #qwerty li a span {
     display: block;
-    margin: 13px 0 0;
+    /*margin: 13px 0 0;*/
     text-transform: uppercase;}
+
+#qwerty li a span.en {
+    position: absolute;
+    display: inline-block;
+    color: #b86c0d;
+    top: 25px ;
+    left: 5px;
+}
+
+#qwerty li a span.en-shift {
+    position: absolute;
+    display: inline-block;
+    color: #b86c0d;
+    top: 5px ;
+    left: 5px;
+}
+
+#qwerty li a span.np {
+    position: absolute;
+    display: inline-block;
+    color: #000;
+    top: 20px ;
+    left: 25px;
+    font-weight: bold;
+}
     
 #qwerty li #tab span {
     text-align: left;
