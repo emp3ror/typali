@@ -168,7 +168,7 @@
   });
 
 
-
+$typeArea.focus();
 
 $typeArea.focus(
     function(){
@@ -177,6 +177,10 @@ $typeArea.focus(
     function(){
         $(this).parent('div').removeClass('active');
     });
+
+$('.writeArea').on('click',function  () {
+    $typeArea.focus();
+})
 
 function blablaCharachet (character,shift) {
     var hereChar = "";
@@ -210,12 +214,15 @@ function validateQuick () {
 
 
 function validateWord () {
-    
-    sentence += word+" ";
-    word = '';
-    $('.showArea').text(sentence);
-    count++;
-    highlightKeys();
+
+    if (word === arrString[count]) {
+        
+        sentence += word+" ";
+        word = '';
+        $('.showArea').text(sentence);
+        count++;
+        highlightKeys();
+    };
 }
 
 

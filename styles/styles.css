@@ -3,7 +3,7 @@ body {background: #fff;}
 .container {
     width: 894px;
     margin : 20px auto;
-    background: #f2f2f2;
+    /*background: #f2f2f2;*/
 }
 
 
@@ -13,6 +13,8 @@ body {background: #fff;}
 
 .showArea {
     min-height: 50px;
+    color: #727070;
+    font-size: 0.8em;
 }
 
 .writeArea {
