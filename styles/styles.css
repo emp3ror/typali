@@ -63,9 +63,9 @@ body {background: #fff;}
 }
 
 .keyboardholder {
-    position: fixed;
-    bottom: 0;
-    left:0;
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*left:0;*/
     
 }
 
@@ -79,6 +79,14 @@ body {background: #fff;}
     color: #F2DEDE;
 }
 
+.highlight {
+    
+}
+
+.highlight a.key {
+    background: #70c5f0 !important;
+}
+
 /* 
     First Keyboad layout design forked from
     http://cssdeck.com/labs/apple-keyboard-via-css3
@@ -89,8 +97,8 @@ body {background: #fff;}
     width: 900px;
     padding: 10px 0 0 10px;
     /*left: 50%;*/
-    transform:translateX(250px);
-    display: none;
+    /*transform:translateX(250px);*/
+    /*display: none;*/
 }
 
 ul {list-style-type: none; width: 784px; margin: 0 auto;}

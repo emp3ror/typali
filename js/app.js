@@ -16,9 +16,38 @@
     $(".text").text(str);
 
     /*generate keyboard*/
+    var qwertyKey = [];
+
+    for (var i = 0; i < keyboard.qwerty.length; i++) {
+        qwertyKey.push(keyboard.qwerty[i]);
+        // console.log(keyboard.qwerty[i].en.charCodeAt(0));
+        qwertyKey[i].cls = "cls"+keyboard.qwerty[i].en.charCodeAt(0)
+    };
+
+    keyboard.qwerty = qwertyKey;
+
+    var asdfgKey = [];
+
+    for (var i = 0; i < keyboard.asdfg.length; i++) {
+        asdfgKey.push(keyboard.asdfg[i]);
+        asdfgKey[i].cls = "cls"+keyboard.asdfg[i].en.charCodeAt(0)
+    };
+
+    keyboard.asdfg = asdfgKey;
+
+    var zxcvbKey = [];
+
+    for (var i = 0; i < keyboard.zxcvb.length; i++) {
+        zxcvbKey.push(keyboard.zxcvb[i]);
+        zxcvbKey[i].cls = "cls"+keyboard.zxcvb[i].en.charCodeAt(0)
+    };
+
+    keyboard.zxcvb = zxcvbKey;
 
     var source   = $("#keyboardmap-template").html();
     var template = Handlebars.compile(source);
+
+    
 
     var context = {data : keyboard.qwerty }
     var html    = template(context);
@@ -49,10 +78,13 @@
     console.log(allKeys);
 
     var engData = allKeys.map(function(item){return item.en;});
+    var allCls = allKeys.map(function(item){return item.cls;});
+    var allnp = allKeys.map(function(item){return item.np;});
+    var allnpShift = allKeys.map(function(item){return item.npShift;});
 
-    console.log(engData);
+    // console.log(engData);
 
-    
+    highlightKeys(); //highlight keys of key board
 
     $typeArea.on('keydown',function(event) {
       console.log( "key pressed = ",$(this).val() );
@@ -183,6 +215,29 @@ function validateWord () {
     word = '';
     $('.showArea').text(sentence);
     count++;
+    highlightKeys();
 }
+
+
+function highlightKeys () {
+    $(".highlight").removeClass("highlight");
+    console.log(arrString[count]);
+    var arrLetters = arrString[count].split("");
+    console.log(allCls);
+    var cls = ""
+    for (var i = 0; i < arrLetters.length; i++) {
+        
+        if(allnp.indexOf(arrLetters[i]) > -1){
+            cls = allCls[allnp.indexOf(arrLetters[i])];
+            console.log(cls)
+        } else {
+            cls = allCls[allnpShift.indexOf(arrLetters[i])];
+        }
+
+        console.log("cls",cls);
+        $("."+cls).addClass("highlight");
+    };
+}
+
 
 })(jQuery);
