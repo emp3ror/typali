@@ -1,5 +1,22 @@
 body {background: #fff;}
 
+.header {
+    font-size: 14px;
+    text-align: right;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 5px;
+    color: #76a3b8;
+}
+
+.header a {
+    color: #76a3b8;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color:#000;
+}
+
 .container {
     width: 894px;
     margin : 20px auto;
