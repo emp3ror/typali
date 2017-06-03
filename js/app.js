@@ -4,9 +4,12 @@
     var word = '';
     var sentence = '';
 
-    /*strings*/
+    /*strings
+        string form http://sahityasangraha.com/%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%80-%E0%A4%9A%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%BE/
+    */
 
-    var str = "\"हुँदैन बिहान मिर्मिरेमा तारा झारेर नगए, बन्दैन मुलुक दुइ-चार सपुत मरेर नगए\" — भुपी शेरचन";
+    
+    var str = "केशवराजको चश्मा दोषी थियो । अलिक टाढाको मानिस तिनी चिन्न सक्तैनथे । किताब पढ्दा तिनको आँखालाई निकै बल पर्थ्यो । चश्माको पावर तिनका आँखाका लागि कम भएछ । धेरै दिनदेखि अर्को चश्मा लिनें विचारमा थिए, तर अझै अनुकूल परेको थिएन ।";
 
     var arrString = str.split(" ");
     var lenString = arrString.length;
@@ -216,7 +219,7 @@ function validateQuick () {
 function validateWord () {
 
     if (word === arrString[count]) {
-        
+
         sentence += word+" ";
         word = '';
         $('.showArea').text(sentence);
