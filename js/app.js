@@ -1,5 +1,6 @@
 (function  ($) {
     
+    var $typeArea = $("#typeArea");
 
     /*generate keyboard*/
 
@@ -40,7 +41,7 @@
 
     var word = '';
 
-    $("#typeArea").on('keydown',function(event) {
+    $typeArea.on('keydown',function(event) {
       console.log( "key pressed = ",$(this).val() );
       var character = $(this).val();
       var  code = event.which || event.charCode;
@@ -114,6 +115,15 @@
     $("#typeArea").val('');
     $( ".word" ).text(word);
   });
+
+
+$typeArea.focus(
+    function(){
+        $(this).parent('div').addClass('active');
+    }).blur(
+    function(){
+        $(this).parent('div').removeClass('active');
+    });
 
 function blablaCharachet (character,shift) {
     var hereChar = "";
