@@ -9,8 +9,8 @@ body {background: #fff;}
     -moz-border-radius-topright: 7px 21px;
     -moz-border-radius-bottomright: 10px;
     -moz-border-radius-bottomleft: 10px;
-    border-top-left-radius: 7px 21px;
-    border-top-right-radius: 7px 21px;
+    /*border-top-left-radius: 7px 21px;*/
+    /*border-top-right-radius: 7px 21px;*/
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 50px 0 0 10px;
@@ -107,19 +107,23 @@ li {float: left;}
     text-transform: lowercase;}
 
 #qwerty li a,
-#asdfg li a {
+#asdfg li a,
+#zxcvb li a {
     display: block;
     position: relative;
     color: #4b4949;
 }
     
 #qwerty li a span,
-#asdfg li a span {
+#asdfg li a span,
+#zxcvb li a span {
     display: block;
     /*margin: 13px 0 0;*/
     text-transform: uppercase;}
 
-#qwerty li a span.en {
+#qwerty li a span.en,
+#asdfg li a span.en,
+#zxcvb li a span.en {
     position: absolute;
     display: inline-block;
     color: #b86c0d;
@@ -127,7 +131,9 @@ li {float: left;}
     left: 5px;
 }
 
-#qwerty li a span.en-shift {
+#qwerty li a span.en-shift,
+#asdfg li a span.en-shift,
+#zxcvb li a span.en-shift {    
     position: absolute;
     display: inline-block;
     color: #b86c0d;
@@ -135,13 +141,15 @@ li {float: left;}
     left: 5px;
 }
 
-#qwerty li a span.np {
+#qwerty li a span.np,
+#asdfg li a span.np,
+#zxcvb li a span.np {
     position: absolute;
     display: inline-block;
     color: #000;
     top: 20px ;
     left: 25px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
     
 #qwerty li #tab span {
@@ -152,31 +160,6 @@ li {float: left;}
 
 #qwerty li .alt b {display: block; margin: 3px 0 0;}
 #qwerty li .alt span {margin: 2px 0 0;}
-
-#asdfg li a span.en {
-    position: absolute;
-    display: inline-block;
-    color: #b86c0d;
-    top: 25px ;
-    left: 5px;
-}
-
-#asdfg li a span.en-shift {
-    position: absolute;
-    display: inline-block;
-    color: #b86c0d;
-    top: 5px ;
-    left: 5px;
-}
-
-#asdfg li a span.np {
-    position: absolute;
-    display: inline-block;
-    color: #000;
-    top: 20px ;
-    left: 25px;
-    font-weight: bold;
-}
 
 
 #asdfg li .alt span {margin: 0; text-transform: lowercase;}
@@ -201,10 +184,6 @@ li {float: left;}
     font-size: 7.5pt;}
 
 
-#zxcvb li a span {
-    display: block;
-    margin: 13px 0 0;
-    text-transform: uppercase;}
 #zxcvb li .shiftleft span {
     text-align: left;
     margin: 23px 0 0 10px;
