@@ -9,6 +9,13 @@ Just used name of legacy typing tutor of Nepal
 * this string is used from 
 * कथा : दोषी चश्मा
 
+
+# TODO
+* calculate speed
+* Ending Message
+* Nepali paragraphs Array
+* Landing page : (choose easy to hard paragraphs)
+
 ## License
 
 * [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
