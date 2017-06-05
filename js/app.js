@@ -5,7 +5,7 @@
     var sentence = '';
 
     /*strings
-        string form http://sahityasangraha.com/%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%80-%E0%A4%9A%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%BE/
+        string from http://sahityasangraha.com/%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%80-%E0%A4%9A%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%BE/
     */
 
     

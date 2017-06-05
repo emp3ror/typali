@@ -15,7 +15,7 @@ Just used name of legacy typing tutor of Nepal
 
 ## Acknowledgements
 
-My sincere respect to all the open source community, all those people who manages their time to helps on finding solution to needy, blog their experices and write tutorials.
+My sincere respect to all the open source community, all those people who manages their time to help on finding solution to needy, blog their experiences and write tutorials.
 
 ## Contributing
 
