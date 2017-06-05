@@ -16,6 +16,9 @@
 
     var count = 0;
 
+    var countLetter = 0;
+    var isLetterCorrect = false;
+
     $(".text").text(str);
 
     /*generate keyboard*/
@@ -106,68 +109,79 @@
 
       if( code == 8 || code == 46 ) {
         console.log("backspace");
-        // if (word.length) {};
+        if (isLetterCorrect && countLetter > 0) {
+            countLetter = countLetter-1;
+            console.log("backspace",countLetter);
+            highlightSingleKey();
+        };
         word = word.substring(0, word.length - 1);
         $( ".word" ).text(word);
+        validateQuick();
 
     } else if (code==32) {
+        console.log("space has been pressed 1");
         validateWord();
     } else if (code < 20) {
+        if (!event.shiftKey) {return};
+        
+    } else { 
+        if (code == 219) {
+            character = '['
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 221) {
+            character = ']'
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 186) {
+            character = ';'
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 222) {
+            character = '\''
+            if (event.shiftKey) {
+                newChar = '\"';
+            } else {
+                newChar = character
+            }
 
-    } else if (code == 219) {
-        character = '['
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 221) {
-        character = ']'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 186) {
-        character = ';'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 222) {
-        character = '\''
-        if (event.shiftKey) {
-            newChar = '\"';
-        } else {
-            newChar = character
+            word += newChar;
+        } else if (code == 220) {
+            character = '\\'
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 188) {
+            character = ','
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 190) {
+            character = '.'
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } else if (code == 191) {
+            character = '/'
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+        } 
+
+
+
+        else {
+            character = String.fromCharCode(code).toLowerCase();
+            newChar = blablaCharachet(character,event.shiftKey);
+
+            word += newChar;
+
+            console.log(newChar);
+
         }
-        // newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 220) {
-        character = '\\'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 188) {
-        character = ','
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 190) {
-        character = '.'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 191) {
-        character = '/'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } 
 
 
 
-    else {
-        character = String.fromCharCode(code).toLowerCase();
-        newChar = blablaCharachet(character,event.shiftKey);
-        
-        word += newChar;
-
-        console.log(newChar);
-        
+        $("#typeArea").val('');
+        $( ".word" ).text(word);
+        validateQuick();
     }
-
-    $("#typeArea").val('');
-    $( ".word" ).text(word);
-    validateQuick();
   });
 
 
@@ -210,22 +224,52 @@ function validateQuick () {
 
     if (word != compareStr) {
         $('.writeArea').addClass("alert");
+        isLetterCorrect = false;
     } else {
         $('.writeArea').removeClass("alert");
+        if(isLetterCorrect){
+            countLetter++;
+        }
+        countLetter = len;
+        isLetterCorrect = true;
+        highlightSingleKey ();
     }
 }
 
 
 function validateWord () {
-
+    console.log("space has been pressed");
     if (word === arrString[count]) {
-
+        countLetter = 0;
         sentence += word+" ";
         word = '';
         $('.showArea').text(sentence);
+        $('.writeArea .word').text('');
         count++;
+        countLetter = 0;
         highlightKeys();
     };
+}
+
+function highlightSingleKey () {
+    var letterToHighlight = arrString[count].charAt(countLetter);
+    $(".highlightLetter").removeClass("highlightLetter");
+    if (letterToHighlight == '') {
+        $(".spacebar").addClass("highlightLetter");
+        return;
+    };
+
+    console.log("letter position",letterToHighlight);
+    $(".highlightLetter").removeClass("highlightLetter");
+    if(allnp.indexOf(letterToHighlight) > -1){
+        cls = allCls[allnp.indexOf(letterToHighlight)];
+
+    } else {
+        cls = allCls[allnpShift.indexOf(letterToHighlight)];
+        $(".shiftKey").addClass("highlightLetter");
+    }
+
+    $("."+cls).addClass("highlightLetter");
 }
 
 
@@ -247,6 +291,8 @@ function highlightKeys () {
         console.log("cls",cls);
         $("."+cls).addClass("highlight");
     };
+
+    highlightSingleKey ();
 }
 
 

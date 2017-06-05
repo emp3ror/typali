@@ -103,7 +103,11 @@ body {background: #fff;}
 }
 
 .highlight a.key {
-    background: #70c5f0 !important;
+    background: #daf1fe !important;
+}
+
+.highlightLetter a.key {
+    background: #6cedc4 !important;
 }
 
 /* 
