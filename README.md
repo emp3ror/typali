@@ -10,7 +10,6 @@ Just used name of legacy typing tutor of Nepal
 * कथा : दोषी चश्मा
 
 # Gross speed
-<br>
 WPM (word per minute)
 <br>
 Taking a [sample text](https://emp3ror.github.io/typesala/speed/sample-text1.md) seems average letters per word on a paragraph (including space) is 6
