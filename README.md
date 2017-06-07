@@ -9,6 +9,16 @@ Just used name of legacy typing tutor of Nepal
 * this string is used from 
 * कथा : दोषी चश्मा
 
+# Gross speed
+<br>
+WPM (word per minute)
+<br>
+Taking a [sample text](https://emp3ror.github.io/typesala/speed/sample-text1.md) seems average letters per word on a paragraph (including space) is 6
+<br>
+So, our formula for gross speed is : 
+<br>
+Gross WPM = (All typed Entries/6)/Time
+
 
 # TODO
 * calculate speed
@@ -32,3 +42,7 @@ Please fork this repository and contribute back using
 Any contributions, large or small, major features, bug fixes, additional
 language translations, unit/integration tests are welcomed and appreciated
 but will be thoroughly reviewed and discussed.
+
+
+## Reference for speed calculation
+https://www.speedtypingonline.com/typing-equations
