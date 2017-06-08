@@ -1,0 +1,110 @@
+<div id="keyboard">
+            <ul class="cf">
+                <li><a href="#" class="key c27 fn"><span id="esc">esc</span></a></li>
+                <li><a href="#" class="key c112 fn"><span>F1</span></a></li>
+                <li><a href="#" class="key c113 fn"><span>F2</span></a></li>
+                <li><a href="#" class="key c114 fn"><span>F3</span></a></li>
+                <li><a href="#" class="key c115 fn"><span>F4</span></a></li>
+                <li><a href="#" class="key c116 fn"><span>F5</span></a></li>
+                <li><a href="#" class="key c117 fn"><span>F6</span></a></li>
+                <li><a href="#" class="key c118 fn"><span>F7</span></a></li>
+                <li><a href="#" class="key c119 fn"><span>F8</span></a></li>
+                <li><a href="#" class="key c120 fn"><span>F9</span></a></li>
+                <li><a href="#" class="key c121 fn"><span>F10</span></a></li>
+                <li><a href="#" class="key c122 fn"><span>F11</span></a></li>
+                <li><a href="#" class="key c123 fn"><span>F12</span></a></li>
+                <li><a href="#" class="key fn"><span>MJT</span></a></li>
+            </ul>
+            <ul class="cf" id="numbers">
+                <li ng-repeat="obj in keyboard['1234']">
+                    <a href="#" class="key c{{obj.code}}">
+                        <b>{{obj.npShift}}</b>
+                        <span>{{obj.np}}</span>
+                    </a>
+                </li>
+                <li><a href="#" class="key c46" id="backspace"><span>Backspace</span></a></li>
+            </ul>
+            <ul class="cf" id="qwerty">
+                <li><a href="#" class="key c9" id="tab"><span>tab</span></a></li>
+                <li ng-repeat="obj in keyboard.qwerty">
+                    <a href="#" class="key c{{obj.code}}">
+                    <span class="en">{{obj.en}}</span>
+                        <span class="en-shift">{{obj.enShift}}</span>
+                        <span class="shift">{{obj.npShift}}</span>
+                        <span class="np">{{obj.np}}</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="cf" id="asdfg">
+                <li>
+                    <a href="#" class="key c20 alt" id="caps"><b></b>
+                        <span>caps lock</span></a>
+                    </li>
+
+                    <li ng-repeat="obj in keyboard.asdfg">
+                        <a href="#" class="key c{{obj.code}}">
+                            <span class="en">{{obj.en}}</span>
+                            <span class="en-shift">{{obj.enShift}}</span>
+                            <span class="shift">{{obj.npShift}}</span>
+                            <span class="np">{{obj.np}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="key c186 alt">
+                            <b>:</b>
+                            <span>;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="key c222 alt">
+                            <b>"</b>
+                            <span>'</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="key c13 " id="enter">
+                            <span>Enter</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cf" id="zxcvb">
+                    <li class="shiftKey">
+                        <a href="#" class="key c16 shiftleft">
+                            <span >Shift</span>
+                        </a>
+                    </li>
+                    
+                    <li ng-repeat="obj in keyboard.zxcvb">
+                        <a href="#" class="key c{{obj.code}}">
+                            <span class="en">{{obj.en}}</span>
+                            <span class="en-shift">{{obj.enShift}}</span>
+                            <span class="shift">{{obj.npShift}}</span>
+                            <span class="np">{{obj.np}}</span>
+                        </a>
+                    </li>
+
+                    <li class="shiftKey">
+                        <a href="#" class="key c16 shiftright">
+                            <span>Shift</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cf" id="bottomrow">
+                    <!-- <li><a href="#" class="key" id="fn"><span>fn</span></a></li> -->
+                    <li><a href="#" class="key c17 ctrl" id="Ctrl"><span>Ctrl</span></a></li>
+                    <li><a href="#" class="key mjt" id="mjtleft"><span>mjt</span></a></li>
+                    <li><a href="#" class="key AltKey" id="AltKeyleft"><span>Alt</span></a></li>
+                    <li class="spacebar"><a href="#" class="key c32" id="spacebar">space</a></li>
+                    <li><a href="#" class="key AltKey" id="AltKeyright"><span>Alt</span></a></li>
+                    <li><a href="#" class="key ctrl" id="CtrlKeyright"><span>Ctrl</span></a></li>
+                    <ol class="cf">
+                        <li><a href="#" class="key c37" id="left"><span></span></a></li>
+                        <li>
+                            <a href="#" class="key c38" id="up"><span></span></a>
+                            <a href="#" class="key c40" id="down"><span></span></a>
+                        </li>
+                        <li><a href="#" class="key c39" id="right"><span></span></a></li>
+                    </ol>
+                </ul>
+            </div>
+        </div>

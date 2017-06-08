@@ -1,0 +1,52 @@
+
+.showArea {
+    min-height: 50px;
+    color: #727070;
+    font-size: 0.8em;
+}
+
+.writeArea {
+    border: 1px solid #c9c9c9;
+    padding: 5px 10px;
+    background: #fff;
+    margin: 20px 0;
+}
+
+.active {
+    border: 1px solid #66ceff;
+     box-shadow: 0px 0px 2px #66ceff;
+}
+
+.writeArea .word {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.writeArea input {
+    border: none;
+    font-size: 18px;
+     outline: none;
+     color: #fff;
+}
+
+.writeArea input:focus {
+     outline: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+.blink {
+    display: inline-block;
+    font-size: 14px;
+    color : 878383;
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
+}

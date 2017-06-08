@@ -1,0 +1,28 @@
+<div class="container practise">
+    <div class="row">
+        <div class="text">
+            {{vm.text}}
+
+        </div>
+
+        <div class="showArea">
+            {{vm.showTyped}}
+        </div>
+
+
+        <div class="writeArea" tabindex='1'>
+            <div class="word">
+                {{vm.word}}
+            </div>
+            <div class="blink">l</div>
+
+            <input type="text" class="" id="typeArea" ng-model='vm.inputChar'>
+        </div>
+
+    </div>
+    <div class="row dataHolder" id="dataHolder">
+        
+    </div>
+
+    <keyboard keyboard="vm.keyboard"></keyboard>
+</div>
