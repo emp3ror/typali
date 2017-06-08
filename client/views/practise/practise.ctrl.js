@@ -1,6 +1,16 @@
 'use strict';
 
 angular.module('typali')
+/*.directive('autoFocus', function($timeout) {
+    return {
+        restrict: 'AC',
+        link: function(_scope, _element) {
+            $timeout(function(){
+                _element[0].focus();
+            }, 0);
+        }
+    };
+})*/
 
 .config(['$stateProvider', function($stateProvider) {
 	$stateProvider
@@ -61,6 +71,9 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     var countLetter = 0;
     var isLetterCorrect = false;
 
+    vm.highlight = arrString[count];
+    vm.highlightSingle = "";
+
     vm.text = str;
 
     var allKeys = [];
@@ -75,9 +88,11 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     var npData_all = allKeys.map(function(item){return item.np;});
     var npShiftData_all = allKeys.map(function(item){return item.npShift;});
 
+    $('.writeArea').on('click',function  () {
+    	$document.find(".writeArea input").focus();
+    })
 
-
-	$document.on('keydown',function (event) {
+	$document.find(".writeArea input").on('keydown',function (event) {
 		
 		// console.log( "key pressed = ",$(this).val() );
       // var character = $(this).val();
@@ -147,7 +162,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 			}
 			countLetter = len;
 			isLetterCorrect = true;
-			// highlightSingleKey ();
+			highlightSingleKey ();
 			// 
 		}
 		$scope.$apply();
@@ -164,9 +179,31 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 			vm.word = word;
 			count++;
 			countLetter = 0;
-			// highlightKeys();
+			highlightKeys();
 			$scope.$apply();
 		};
 	}
+
+
+function highlightKeys() {
+	vm.highlight = arrString[count];
+	highlightSingleKey();
+}
+
+function highlightSingleKey() {
+
+	var letterToHighlight = arrString[count].charAt(countLetter);
+
+    if (letterToHighlight == '') {
+        vm.highlightSingle = ' '
+        return;
+    };
+
+    vm.highlightSingle = letterToHighlight;
+}
+
+vm.highlightSingleFn = function () {
+	highlightSingleKey();
+}
 
 };

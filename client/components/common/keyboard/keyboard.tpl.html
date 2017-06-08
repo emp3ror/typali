@@ -16,7 +16,7 @@
         <li><a href="#" class="key fn"><span>MJT</span></a></li>
     </ul>
     <ul class="cf" id="numbers">
-        <li ng-repeat="obj in keyboard['1234']">
+        <li ng-repeat="obj in $ctrl.keyboard['1234']">
             <a href="#" class="key c{{obj.code}}">
                 <b>{{obj.npShift}}</b>
                 <span>{{obj.np}}</span>
@@ -26,7 +26,7 @@
     </ul>
     <ul class="cf" id="qwerty">
         <li><a href="#" class="key c9" id="tab"><span>tab</span></a></li>
-        <li ng-repeat="obj in keyboard.qwerty">
+        <li ng-repeat="obj in $ctrl.keyboard.qwerty">
             <a href="#" class="key c{{obj.code}}">
                 <span class="en">{{obj.en}}</span>
                 <span class="en-shift">{{obj.enShift}}</span>
@@ -41,7 +41,7 @@
                 <span>caps lock</span></a>
             </li>
 
-            <li ng-repeat="obj in keyboard.asdfg">
+            <li ng-repeat="obj in $ctrl.keyboard.asdfg">
                 <a href="#" class="key c{{obj.code}}">
                     <span class="en">{{obj.en}}</span>
                     <span class="en-shift">{{obj.enShift}}</span>
@@ -56,13 +56,13 @@
             </li>
         </ul>
         <ul class="cf" id="zxcvb">
-            <li class="shiftKey">
-                <a href="#" class="key c16 shiftleft">
+            <li class="">
+                <a href="#" class="key shiftKey c16 shiftleft">
                     <span >Shift</span>
                 </a>
             </li>
 
-            <li ng-repeat="obj in keyboard.zxcvb">
+            <li ng-repeat="obj in $ctrl.keyboard.zxcvb">
                 <a href="#" class="key c{{obj.code}}">
                     <span class="en">{{obj.en}}</span>
                     <span class="en-shift">{{obj.enShift}}</span>
@@ -71,8 +71,8 @@
                 </a>
             </li>
 
-            <li class="shiftKey">
-                <a href="#" class="key c16 shiftright">
+            <li class="">
+                <a href="#" class="key shiftKey c16 shiftright">
                     <span>Shift</span>
                 </a>
             </li>
@@ -82,7 +82,7 @@
             <li><a href="#" class="key c17 ctrl" id="Ctrl"><span>Ctrl</span></a></li>
             <li><a href="#" class="key mjt" id="mjtleft"><span>mjt</span></a></li>
             <li><a href="#" class="key AltKey" id="AltKeyleft"><span>Alt</span></a></li>
-            <li class="spacebar"><a href="#" class="key c32" id="spacebar">space</a></li>
+            <li class=""><a href="#" class="key spacebar c32" id="spacebar">space</a></li>
             <li><a href="#" class="key AltKey" id="AltKeyright"><span>Alt</span></a></li>
             <li><a href="#" class="key ctrl" id="CtrlKeyright"><span>Ctrl</span></a></li>
             <ol class="cf">

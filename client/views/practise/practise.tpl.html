@@ -10,13 +10,13 @@
         </div>
 
 
-        <div class="writeArea alert" ng-class="{'alert-danger' : vm.alert}" tabindex='1'>
+        <div class="writeArea alert" ng-class="{'alert-danger' : vm.alert, 'active': vm.inputFocus}" tabindex='1'>
             <div class="word">
                 {{vm.word}}
             </div>
             <div class="blink">l</div>
 
-            <input type="text" class="" id="typeArea" ng-model='vm.inputChar'>
+            <input type="text" class="" id="typeArea" ng-model='vm.inputChar' ng-blur="vm.inputFocus = false" ng-focus="vm.inputFocus = true; vm.highlightSingleFn()">
         </div>
 
     </div>
@@ -24,5 +24,6 @@
         
     </div>
 
-    <keyboard keyboard="vm.keyboard"></keyboard>
+    <!-- <keyboard keyboard="vm.keyboard"></keyboard> -->
+    <keyboard2 keyboard="vm.keyboard" word="vm.highlight" letter="vm.highlightSingle"></keyboard2>
 </div>
