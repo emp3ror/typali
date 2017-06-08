@@ -1,16 +1,6 @@
 'use strict';
 
 angular.module('typali')
-/*.directive('autoFocus', function($timeout) {
-    return {
-        restrict: 'AC',
-        link: function(_scope, _element) {
-            $timeout(function(){
-                _element[0].focus();
-            }, 0);
-        }
-    };
-})*/
 
 .config(['$stateProvider', function($stateProvider) {
 	$stateProvider
@@ -61,7 +51,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     */
     vm.keyboard = keyboard;
     
-    var str = "केशवराजको चश्मा दोषी थियो । अलिक टाढाको मानिस तिनी चिन्न सक्तैनथे । किताब पढ्दा तिनको आँखालाई निकै बल पर्थ्यो । चश्माको पावर तिनका आँखाका लागि कम भएछ । धेरै दिनदेखि अर्को चश्मा लिनें विचारमा थिए, तर अझै अनुकूल परेको थिएन ।";
+    var str = "सानो छ खेत, सानो छ बारी, सानै छ जहान नगरी काम, पुग्दैन खान, साँझ र बिहान ।।";
 
     var arrString = str.split(" ");
     var lenString = arrString.length;
@@ -74,7 +64,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     vm.highlight = arrString[count];
     vm.highlightSingle = "";
 
-    vm.text = str;
+    vm.text = arrString;
 
     var allKeys = [];
     for(var key in keyboard) {
@@ -181,6 +171,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 			countLetter = 0;
 			highlightKeys();
 			$scope.$apply();
+			highlightWord();
 		};
 	}
 
@@ -205,5 +196,16 @@ function highlightSingleKey() {
 vm.highlightSingleFn = function () {
 	highlightSingleKey();
 }
+
+function highlightWord() {
+	var countWordHere = count+1;
+	$document.find(".text span").removeClass("highlightWord");
+	$document.find(".text > span:nth-child("+countWordHere+")").addClass("highlightWord");
+}
+
+setTimeout(function () {
+	highlightWord();	
+},1000);
+
 
 };

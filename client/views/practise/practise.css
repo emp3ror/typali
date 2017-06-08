@@ -59,3 +59,8 @@
     background: #F2DEDE;
     color: #F2DEDE;
 }
+
+.highlightWord span {
+    /*background: #000;*/
+    border-bottom: 1px solid #000;
+}

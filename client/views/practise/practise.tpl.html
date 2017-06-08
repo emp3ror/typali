@@ -1,7 +1,9 @@
 <div class="container practise">
     <div class="row">
         <div class="text">
-            {{vm.text}}
+            <span class="" ng-repeat="value in vm.text track by $index">
+                <span>{{value}}</span>&nbsp;
+            </span>
 
         </div>
 
