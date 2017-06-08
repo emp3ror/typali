@@ -29,12 +29,18 @@ angular.module('typali')
 
 .controller('practiseCtrl', PractiseCtrl);
 
-PractiseCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout"];
-function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
+PractiseCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout",'$interval'];
+function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval) {
 	var vm = this;
 
 	var param = $stateParams.param;
 
+	var isFirstLetter = true;
+
+	var initTime = 0;
+
+	vm.time = 0;
+	var timeRunner;
 
 	var word = '';
     var sentence = '';
@@ -61,12 +67,17 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     var count = 0;
 
     var countLetter = 0;
+
+    var grossCount = 0;
+
     var isLetterCorrect = false;
 
     vm.highlight = arrString[count];
     vm.highlightSingle = "";
 
     vm.text = arrString;
+
+
 
     var allKeys = [];
     for(var key in keyboard) {
@@ -89,8 +100,12 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 		if (typedisable) {
 			return;
 		}
-		// console.log( "key pressed = ",$(this).val() );
-      // var character = $(this).val();
+		
+		if (isFirstLetter) {
+			isFirstLetter = false;
+			initialiseTime();
+		}
+
       var  code = event.which || event.charCode;
       // console.log(code,character,event.shiftKey);
       var newChar = '';
@@ -173,15 +188,23 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 			vm.sentence = sentence;
 			vm.word = word;
 			count++;
+
+			grossCount = grossCount+countLetter+1;
+
 			countLetter = 0;
 			$scope.$apply();
 			if (count>=vm.text.length) {
 				typedisable = true;
+				timeRunner
+				$interval.cancel(timeRunner);
+				stop = undefined;
 			} else {
 				highlightKeys();
 				
 				highlightWord();
 			}
+
+			calulateWPM();
 		};
 	}
 
@@ -217,6 +240,30 @@ function highlightWord() {
 setTimeout(function () {
 	highlightWord();	
 },1000);
+
+
+
+function initialiseTime() {
+	var d = new Date();
+	initTime = d.getTime();
+
+
+
+	timeRunner = $interval(function () {
+		vm.time +=1;
+	},1000);
+
+}
+
+function calulateWPM() {
+	var d = new Date();
+	var hereTime = d.getTime();
+
+	var timeTaken = hereTime - initTime;
+	vm.timeTaken = timeTaken;
+	var wpm = 1000*60*(grossCount/6)/timeTaken;
+	vm.speed = Math.round(wpm);
+}
 
 
 };
