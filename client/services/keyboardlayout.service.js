@@ -2,6 +2,8 @@
 angular.module('typali')
 .factory('keyboardlayout', function ($rootScope) {
 
+  /*can add different keybord*/
+
   /*unicode default keyboard*/
   var keyboard = {};
   keyboard.unicode = {
