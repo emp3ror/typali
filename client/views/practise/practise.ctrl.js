@@ -40,6 +40,8 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     var sentence = '';
     var keyboard = keyboardlayout.unicode;
 
+    var typedisable = false;
+
     vm.sentence  = "";
 
     vm.word = "Type here";
@@ -51,7 +53,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
     */
     vm.keyboard = keyboard;
     
-    var str = "सानो छ खेत, सानो छ बारी, सानै छ जहान नगरी काम, पुग्दैन खान, साँझ र बिहान ।।";
+    var str = "सानो छ खेत";
 
     var arrString = str.split(" ");
     var lenString = arrString.length;
@@ -84,6 +86,9 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 
 	$document.find(".writeArea input").on('keydown',function (event) {
 		
+		if (typedisable) {
+			return;
+		}
 		// console.log( "key pressed = ",$(this).val() );
       // var character = $(this).val();
       var  code = event.which || event.charCode;
@@ -169,9 +174,14 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout) {
 			vm.word = word;
 			count++;
 			countLetter = 0;
-			highlightKeys();
 			$scope.$apply();
-			highlightWord();
+			if (count>=vm.text.length) {
+				typedisable = true;
+			} else {
+				highlightKeys();
+				
+				highlightWord();
+			}
 		};
 	}
 
@@ -194,6 +204,7 @@ function highlightSingleKey() {
 }
 
 vm.highlightSingleFn = function () {
+	if (typedisable) return;
 	highlightSingleKey();
 }
 

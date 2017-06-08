@@ -16,9 +16,12 @@
     redefined by mjt
  */
 #keyboard {
-    margin: 15px auto 0;
-    width: 900px;
-    padding: 10px 0 0 10px;
+    /*margin: 15px auto 0;*/
+    margin-left: -15px;
+    left: 0;
+    width: 784px;
+    /*padding: 10px 0 0 10px;*/
+    background: #f3f3f3;
     /*left: 50%;*/
     /*transform:translateX(250px);*/
     /*display: none;*/
