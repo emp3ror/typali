@@ -1,0 +1,14 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+public/
+tmp
+.DS_Store
+.idea
+.tags
+.tags_sorted_by_file
+dist
+client/configFile.js
+*~
+\#*\#
