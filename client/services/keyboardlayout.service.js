@@ -140,6 +140,18 @@ angular.module('typali')
       "npShift":"॥",
       "np":"ल"
     },
+    {  
+      "code" : "186",
+      "en":"l",
+      "npShift":"\:",
+      "np":"\;"
+    },
+    {  
+      "code" : "222",
+      "en":"l",
+      "npShift":"\"",
+      "np":"\'"
+    }
     ],
     "zxcvb" : [  
 

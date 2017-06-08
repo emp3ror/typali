@@ -50,3 +50,11 @@
   animation: blink 1s step-start 0s infinite;
   -webkit-animation: blink 1s step-start 0s infinite;
 }
+
+.writeArea.alert-danger {
+    background: #F2DEDE;
+}
+
+.writeArea.alert-danger input {
+    background: #F2DEDE;
+}

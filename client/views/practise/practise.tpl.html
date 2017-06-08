@@ -6,11 +6,11 @@
         </div>
 
         <div class="showArea">
-            {{vm.showTyped}}
+            {{vm.sentence}}
         </div>
 
 
-        <div class="writeArea" tabindex='1'>
+        <div class="writeArea alert" ng-class="{'alert-danger' : vm.alert}" tabindex='1'>
             <div class="word">
                 {{vm.word}}
             </div>
