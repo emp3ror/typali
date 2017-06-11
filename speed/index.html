@@ -1,0 +1,60 @@
+<html>
+<head>
+    
+
+    <style>
+        .avg-holder >span {
+            display : inline-block;
+        }
+
+        .avg-holder span .totalChar {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    this sample text is from <b>दोषी चश्मा </b> by <b> विश्वेश्वरप्रसाद कोइराला </b>
+</div>
+
+<div>Enter text here : </div>
+<textarea name="nepaliText" id="textBox" cols="100" rows="20">
+तिनी जर्साबकहाँ चाकरी गर्न जान्थे। एक दिन सधैंको जस्तो चाकरीमा गएका थिए, तर ५ बज्दा पनि जर्साबको सवारी भएन। आज सवारी हुँदैन कि? सारा चाकरिया निराश भएर आज सवारी हुँदैन भन्ने निश्चय गरी फर्के। तर केशवराज महलको अगाडिको चौर रिक्त भएपछि पनि धेरै बेरसम्म आशाले बसिरहे। साँझ पर्न लागेको थियो। सूर्यलाई पश्चिमतिर पहाडले ढाकिदिएको हुनाले हाम्रो पृथ्वी त अँध्यारिंदै आएको थियो तर आकाशतिर सूर्यका लामा रश्मि तेर्सिरहेका थिए। साथीभाइसँगै छुट्टिएका, बाटो बिराएका, एक-दुई बादलका टुक्रा आकाशमा रँगमगिंदै थिए। केशवराजलाई यो दृश्यले लोभ्यायो। उनी पनि आज जर्साबको सवारी हुँदैन भन्ने निश्चय गरेर बाटो लागे। अरु दिन भएको भए जर्साबका चाकरी नपाउँदा तिनी कति दु:खित हुन्थे, तर आज तिनलाई बडो उत्साह थियो। फूर्तिसँग डेग बढाउँदै धानको लहलहाउँदो खेतबाट आएको सुगन्धी वायुलाई स्वादसँग फोक्सोभित्र भर्दै तिनी आइरहेका थिए। त्यो टाढाको कालो वस्तु ढुङ्गा हो कि मुढो हो कि, भैँसी हो कि त मानिस नै हो, यो तिनले ठम्याउन सकेनन्। चश्मा कस्तो बेकामको भएछ, तिनले फेरि सम्झे। तर यो बिचारले तिनलाई धेरै बेर चिन्तित पारेन त्यसै बखतमा पछिल्तिरबाट ‘भों, भों’ गर्दै एउटा मोटर आयो। मोटरको नम्बर हेरेर ‘स्वस्ति’ गर्नुपर्ने हुनाले, चश्माको घेरालाई देव्रे हातको बुढी र चोर औंलाले समातेर उनले मोटरको नम्बर-प्लेटलाई गौर गरे। “धत्, यो चश्माले ठ्याम्मै काम नचल्ने भयो।” मोटरको नम्बर उनले पढ्न सकेनन्। त्यसै बखतमा मोटर हर्र गयो, अनि पो मोटरलाई र मोटरमा राज भएका जर्साबलाई तिनले चिने र हतपताउँदै स्वस्ति गरे। चश्माले यँहा पनि धोका दियो।
+</textarea>
+
+<div>
+    <button id="btn-get-output">Get Output</button>
+</div>
+
+<div class="outputBox">
+    <div class="totalChar">
+        <span>Total characters including space and others = </span>
+        <span class="resultsLengthChar"></span>
+    </div>
+    <div class="totalWords">
+        <span>Total words = </span>
+        <span class="resultsTotalWord"></span>
+    </div>
+    <div class="avg-holder">
+        <span>Avg characters per word = </span>
+        <span>
+            <div class="totalChar">Total characters</div>
+            <div>Total words</div>
+        </span>
+        =
+        <span>
+            <div class="totalChar resultsLengthChar"></div>
+            <div class="resultsTotalWord"></div>
+        </span>
+        =
+        <span class="avgCharaters">
+            
+        </span>
+    </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>    
+<script src="speed-calculation.js"></script>
+</body>
+</html>

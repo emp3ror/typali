@@ -17,7 +17,10 @@
     <script src="data/keyboardmap.js"></script>
 </head>
 <body>
+    <div class="header">
+        <a href="https://github.com/emp3ror/typesala/issues">Post issues Here</a>/<a href="">contribute</a>
 
+    </div>
     <div class="container">
         <div class="row">
             <div class="text">
@@ -110,13 +113,13 @@
             </li>
         </ul>
         <ul class="cf" id="zxcvb">
-            <li>
+            <li class="shiftKey">
                 <a href="#" class="key c16 shiftleft">
                     <span >Shift</span>
                 </a>
             </li>
             <span></span>
-            <li>
+            <li class="shiftKey">
                 <a href="#" class="key c16 shiftright">
                     <span>Shift</span>
                 </a>
@@ -127,7 +130,7 @@
             <li><a href="#" class="key c17 ctrl" id="Ctrl"><span>Ctrl</span></a></li>
             <li><a href="#" class="key mjt" id="mjtleft"><span>mjt</span></a></li>
             <li><a href="#" class="key AltKey" id="AltKeyleft"><span>Alt</span></a></li>
-            <li><a href="#" class="key c32" id="spacebar">space</a></li>
+            <li class="spacebar"><a href="#" class="key c32" id="spacebar">space</a></li>
             <li><a href="#" class="key AltKey" id="AltKeyright"><span>Alt</span></a></li>
             <li><a href="#" class="key ctrl" id="CtrlKeyright"><span>Ctrl</span></a></li>
             <ol class="cf">
@@ -163,5 +166,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
     
     <script src="js/app.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-100142074-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
