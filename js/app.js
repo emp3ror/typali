@@ -104,70 +104,73 @@
         console.log("data = ",String.fromCharCode(code).toLowerCase());
       }
 
-      if( code == 8 || code == 46 ) {
-        console.log("backspace");
-        // if (word.length) {};
-        word = word.substring(0, word.length - 1);
-        $( ".word" ).text(word);
-
-    } else if (code==32) {
-        validateWord();
-    } else if (code < 20) {
-
-    } else if (code == 219) {
-        character = '['
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 221) {
-        character = ']'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 186) {
-        character = ';'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 222) {
-        character = '\''
-        if (event.shiftKey) {
-            newChar = '\"';
-        } else {
-            newChar = character
+    if (code < 20 && code !=8)  return;
+    switch(code) {
+        case 8:
+        case 46:
+            console.log("backspace");
+            // if (word.length) {};
+            word = word.substring(0, word.length - 1);
+            $( ".word" ).text(word);
+            break;
+        case 32:
+            validateWord();
+            break;
+        case 219:
+            character = '[';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 221:
+            character = ']';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 186:
+            character = ';';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 222:
+            character = '\'';
+            if (event.shiftKey) {
+                newChar = '\"';
+            } else {
+                newChar = character;
+            }
+            // newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 220:
+            character = '\\';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 188:
+            character = ',';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 190:
+            character = '.';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        case 191:
+            character = '/';
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            break;
+        default:
+            character = String.fromCharCode(code).toLowerCase();
+            newChar = blablaCharachet(character,event.shiftKey);
+            word += newChar;
+            console.log(newChar);
         }
-        // newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 220) {
-        character = '\\'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 188) {
-        character = ','
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 190) {
-        character = '.'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } else if (code == 191) {
-        character = '/'
-        newChar = blablaCharachet(character,event.shiftKey);
-        word += newChar;
-    } 
 
-
-
-    else {
-        character = String.fromCharCode(code).toLowerCase();
-        newChar = blablaCharachet(character,event.shiftKey);
-        
-        word += newChar;
-
-        console.log(newChar);
-        
-    }
-
-    $("#typeArea").val('');
-    $( ".word" ).text(word);
-    validateQuick();
+        $("#typeArea").val('');
+        $( ".word" ).text(word);
+        validateQuick();
   });
 
 
