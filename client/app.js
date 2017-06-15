@@ -25,9 +25,7 @@ function run($rootScope, $location, authentication,$window) {
 var app = angular.module('typali', [
   'ui.router',
   'ngSanitize',
-  'angular-loading-bar',
-
-  'angulike',
+  'angular-loading-bar'
 ])
 
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {

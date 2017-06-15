@@ -15,64 +15,47 @@
     "angular-loading-bar": "^0.9.0",
     "angular-aria": "~1.5.0",
     "angular-animate": "~1.5.0",
-    "angular-messages": "~1.5.0",
-    "angulike": "^1.2.0"
+    "angular-messages": "~1.5.0"
   },
-  "overrides": {
+    "overrides": {
     "jquery": {
       "main": []
     },
     "angular": {
-      "main": [
-        "angular.min.js"
-      ]
+      "main": []
     },
     "angular-loader": {
-      "main": [
-        "angular-loader.min.js"
-      ]
+      "main": []
     },
     "angular-sanitize": {
-      "main": [
-        "angular-sanitize.min.js"
-      ]
+      "main": []
     },
     "angular-ui-router": {
-      "main": [
-        "release/angular-ui-router.min.js"
-      ]
+      "main": []
     },
     "angular-aria": {
-      "main": [
-        "angular-aria.min.js"
-      ]
+      "main": []
     },
     "angular-animate": {
-      "main": [
-        "angular-animate.min.js"
-      ]
+      "main": []
     },
     "angular-messages": {
-      "main": [
-        "angular-messages.min.js"
-      ]
+      "main": []
     },
     "bootstrap": {
-      "main": [
-        "dist/css/bootstrap.min.css",
-        "dist/js/bootstrap.min.js"
-      ]
+      "main": []
+    },
+    "angular-bootstrap": {
+      "main": []
     },
     "angular-loading-bar": {
-      "main": [
-        "build/loading-bar.min.js",
-        "build/loading-bar.min.css"
-      ]
+      "main": []
     },
     "font-awesome": {
-      "main": [
-        "css/font-awesome.min.css"
-      ]
+      "main": []
+    },
+    "highcharts": {
+      "main": []
     }
   }
 }
