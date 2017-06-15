@@ -18,10 +18,10 @@ app.use(morgan('dev'));
 
 
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+// app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/views');
 
-app.use('/bower_components', express.static('./bower_components'));
+// app.use('/bower_components', express.static('./bower_components'));
 
 app.use(bodyParser.urlencoded({ extended: true, parameterLimit: 5000 }));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json

@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "browser-sync": "^2.18.5",
+    "connect-modrewrite": "^0.10.1",
     "ejs": "^2.5.5",
     "express": "^4.10.2",
     "express-session": "^1.14.2",

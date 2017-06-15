@@ -12,13 +12,13 @@ gulp.task('inject', function () {
 
 	var sources = gulp.src(['./client/**/*.js', '!./client/**/*test.js' ],{
 		
-		relative: true})
+		relative: false})
 		.pipe(angularFilesort())
 		.pipe(print());
 
 	var injectStyles = gulp.src(['./client/**/*.css'], 
 		{ read: false,
-		relative: true })
+		relative: false })
 		.pipe(print());
 
 	var options = {

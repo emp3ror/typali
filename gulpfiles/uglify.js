@@ -5,12 +5,12 @@ var rename = require('gulp-rename');
 var plumber = require('gulp-plumber')
 
 gulp.task('uglify', ['app'], function() {
-	return gulp.src('public/app.js')
+	return gulp.src('dist/app.js')
 		.pipe(plumber())
 		.pipe(bytediff.start())
 		.pipe(uglify({mangle: true}))
 		.pipe(bytediff.stop())
 		.pipe(rename('app.min.js'))
 		.pipe(plumber.stop())
-		.pipe(gulp.dest('public/'));
+		.pipe(gulp.dest('dist/'));
 });

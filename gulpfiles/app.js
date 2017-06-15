@@ -14,5 +14,5 @@ gulp.task('app', function() {
 		.pipe(concat('app.js', {newLine: ';'}))
 		.pipe(ngAnnotate({add: true}))
 	  .pipe(plumber.stop())
-    .pipe(gulp.dest('public/'));
+    .pipe(gulp.dest('dist/'));
 });

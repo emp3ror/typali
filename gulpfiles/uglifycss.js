@@ -9,5 +9,5 @@ gulp.task('uglifycss', function () {
       "uglyComments": true
     }))
     .pipe(concat('app.css'))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./dist/'));
 });

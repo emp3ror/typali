@@ -16,11 +16,11 @@ router.use('/', function (req, res, next) {
 /*static defined*/
 // res.sendfile('./public/index.html');
 
-router.use("/", express.static('./public/')); //public folder run by gulp
+// router.use("/", express.static('./public/')); //public folder run by gulp
 
-router.use("/", express.static('./client/')); //client folder also taken as static 
+// router.use("/", express.static('./client/')); //client folder also taken as static 
 
-router.use("/img/", express.static('./client/assets/img/'));
+// router.use("/img/", express.static('./client/assets/img/'));
 
 // router.use('*', express.static('./public/index.html'))
 router.get('*', function(req, res) {
