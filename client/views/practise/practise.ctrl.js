@@ -133,7 +133,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
     })
 
 	$document.find(".writeArea input").on('keydown',function (event) {
-		
+		console.log("yo here");
 		if (typedisable) {
 			return;
 		}
