@@ -5,7 +5,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var io = require('socket.io')(http);
+// var io = require('socket.io')(http);
 var request = require('request');
 
 var config = require('./config.json');
@@ -48,7 +48,7 @@ require('./app/routes.js')(app,io);
 http.listen(port,function(){
   console.log('listening on *:'+port);
 });  
- 
+/* 
 io.on('connection', function (socket) {
 	console.log('client connect');
 	// socket.on('echo', function (data) {
@@ -65,7 +65,7 @@ io.on('connection', function (socket) {
       
     // })
 		
-	});
+	});*/
 
 	// io.emit('update', {msg : 'i reached everywhere'});
 // });
