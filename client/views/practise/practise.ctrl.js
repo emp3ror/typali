@@ -29,13 +29,22 @@ angular.module('typali')
 
 .controller('practiseCtrl', PractiseCtrl);
 
-PractiseCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout",'$interval'];
-function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval) {
+PractiseCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout",'$interval','datafetchService'];
+function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,datafetchService) {
 	var vm = this;
 
 	var param = $stateParams.param;
 
+	vm.isloading = true;
+
 	var isFirstLetter = true;
+
+	var arrString,
+	    lenString,
+	    count = 0,
+	    countLetter = 0,
+	    grossCount = 0,
+	    isLetterCorrect = false;
 
 	var initTime = 0;
 
@@ -54,30 +63,25 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval) {
 
     vm.alert = false;
 
-    /*strings
-        string from http://sahityasangraha.com/%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%80-%E0%A4%9A%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%BE/
-    */
-    vm.keyboard = keyboard;
-    
     var str = "सानो छ खेत";
 
-    var arrString = str.split(" ");
-    var lenString = arrString.length;
 
-    var count = 0;
+    /*promise to get string*/
+    var promise = datafetchService.getString("10");
+    promise.then(function (response) {
 
-    var countLetter = 0;
-
-    var grossCount = 0;
-
-    var isLetterCorrect = false;
-
-    vm.highlight = arrString[count];
-    vm.highlightSingle = "";
-
-    vm.text = arrString;
+    	var contents = response.data;
+    	str = contents.text;
+    	afterStringIsArrived();
+    })
+    .catch(function (error) {
+    	console.log(error);
+    })
 
 
+    /* keyboard settlement*/
+
+    vm.keyboard = keyboard;
 
     var allKeys = [];
     for(var key in keyboard) {
@@ -90,6 +94,39 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval) {
     var codeData_all = allKeys.map(function(item){return item.code;});
     var npData_all = allKeys.map(function(item){return item.np;});
     var npShiftData_all = allKeys.map(function(item){return item.npShift;});
+    
+    /* key board settlement ends*/
+
+    function afterStringIsArrived() {
+    	
+
+    	arrString = str.split(" ");
+    	lenString = arrString.length;
+
+    	count = 0;
+
+    	countLetter = 0;
+
+    	grossCount = 0;
+
+    	isLetterCorrect = false;
+
+    	vm.highlight = arrString[count];
+    	vm.highlightSingle = "";
+
+    	vm.text = arrString;
+
+    	setTimeout(function () {
+    		highlightWord();	
+    	},1000);
+
+    	vm.isloading =false;
+
+    }
+
+
+
+    
 
     $('.writeArea').on('click',function  () {
     	$document.find(".writeArea input").focus();
@@ -237,9 +274,7 @@ function highlightWord() {
 	$document.find(".text > span:nth-child("+countWordHere+")").addClass("highlightWord");
 }
 
-setTimeout(function () {
-	highlightWord();	
-},1000);
+
 
 
 
