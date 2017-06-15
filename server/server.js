@@ -30,14 +30,14 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(session({ secret: "mjt", resave: false, saveUninitialized: true }));
 
 app.use(function(req, res, next) {
-  req.io = io;
+  // req.io = io;
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
 
-require('./app/routes.js')(app,io);
+require('./app/routes.js')(app);
 
 
 
