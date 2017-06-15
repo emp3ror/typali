@@ -23,8 +23,8 @@ router.use('/', function (req, res, next) {
 // router.use("/img/", express.static('./client/assets/img/'));
 
 // router.use('*', express.static('./public/index.html'))
-router.get('*', function(req, res) {
+/*router.get('*', function(req, res) {
     res.sendfile('./public/index.html');
     });
-
+*/
 module.exports = router;
