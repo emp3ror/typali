@@ -8,7 +8,6 @@ tmp
 .idea
 .tags
 .tags_sorted_by_file
-dist
 client/configFile.js
 *~
 \#*\#
