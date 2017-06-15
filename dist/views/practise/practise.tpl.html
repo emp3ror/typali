@@ -1,6 +1,9 @@
 <div class="container practise">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9" ng-if="vm.isloading">
+            <img src="assets/img/loading.gif" alt="">
+        </div>
+        <div class="col-md-9" ng-if="!vm.isloading">
             <div class="text">
                 <span class="" ng-repeat="value in vm.text track by $index">
                     <span>{{value}}</span>&nbsp;
