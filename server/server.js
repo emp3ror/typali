@@ -3,7 +3,7 @@ app = express();
 var http = require('https').Server(app);
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+// var session = require('express-session');
 
 // var io = require('socket.io')(http);
 var request = require('request');
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true, parameterLimit: 5000 }));       
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
-app.use(session({ secret: "mjt", resave: false, saveUninitialized: true }));
+// app.use(session({ secret: "mjt", resave: false, saveUninitialized: true }));
 
 app.use(function(req, res, next) {
   // req.io = io;
