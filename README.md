@@ -1,9 +1,12 @@
 # Typali: Nepali typing tutor
 Type+Nepali = typali :D
 
+# why typali (not typesala)
+ typesala.com typeshala.com domains where too high ;)
+
 
 # Demo 
-[Demo](https://emp3ror.github.io/typesala/).
+[Demo](https://emp3ror.github.io/typali/).
 
 ## sample text
 * this string is used from 
@@ -56,6 +59,17 @@ for production
 ```bash
 $ gulp prod
 ```
+
+# /dist 
+dist folder is created when
+```bash
+$ gulp prod
+```
+
+### for gh-pages
+ rename index.html to 404.html (hack for github redirect)
+ git subtree push --prefix dist origin gh-pages
+
 
 ## License
 
