@@ -6,3 +6,7 @@ html,body {
 }
 /* app css stylesheet */
 
+.mainView {
+	min-height: 300px;
+	margin-bottom: 20px;
+}
