@@ -74,8 +74,8 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
     	var contents = response.data;
     	console.log(contents);
     	textAll = contents.data;
-    	// str = contents.data.text;
-    	str = str;
+    	str = contents.data.text;
+    	// str = str;
     	afterStringIsArrived();
     	messagebox();
     })

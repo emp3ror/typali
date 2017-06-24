@@ -62,6 +62,7 @@
 
 .highlightWord span {
     /*background: #000;*/
+    font-weight: bold;
     border-bottom: 1px solid #000;
 }
 
