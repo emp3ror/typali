@@ -64,6 +64,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
     vm.alert = false;
 
     var str = "सानो छ खेत";
+    var textAll = {};
 
 
     /*promise to get string*/
@@ -71,8 +72,12 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
     promise.then(function (response) {
 
     	var contents = response.data;
-    	str = contents.text;
+    	console.log(contents);
+    	textAll = contents.data;
+    	// str = contents.data.text;
+    	str = str;
     	afterStringIsArrived();
+    	messagebox();
     })
     .catch(function (error) {
     	console.log(error);
@@ -235,6 +240,9 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
 				timeRunner
 				$interval.cancel(timeRunner);
 				stop = undefined;
+				vm.msgbox = true;
+				console.log("string complete",vm.msgbox);
+				$scope.$apply();
 			} else {
 				highlightKeys();
 				
@@ -298,6 +306,16 @@ function calulateWPM() {
 	vm.timeTaken = timeTaken;
 	var wpm = 1000*60*(grossCount/6)/timeTaken;
 	vm.speed = Math.round(wpm);
+}
+
+function messagebox() {
+	vm.art = {
+		title : textAll.title,
+		author : textAll.author
+	}
+
+	console.log("textAll",textAll);
+	
 }
 
 

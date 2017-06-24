@@ -64,3 +64,25 @@
     /*background: #000;*/
     border-bottom: 1px solid #000;
 }
+
+.practise .msgHolder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.practise .messegebox {
+  position: absolute;
+  background: #fff;
+  top: 100px;
+  left: 30%;
+  width: 400px;
+  transform: translateX(-150px);
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 0 0 5px #f8f8f8;
+  border-radius: 5px;
+}
