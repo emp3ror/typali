@@ -1,0 +1,107 @@
+
+
+.editor a {
+  cursor: pointer;
+}
+
+.editor #editor {
+  box-shadow: 0 0 2px #CCC;
+  min-height: 150px;
+  overflow: auto;
+  padding: 1em;
+  margin-top: 20px;
+  resize: vertical;
+  outline: none;
+}
+
+.editor .toolbar {
+  text-align: center;
+}
+
+.editor .toolbar a,
+.editor .fore-wrapper,
+.editor .back-wrapper {
+  border: 1px solid #AAA;
+  background: #FFF;
+  font-family: 'Candal';
+  border-radius: 1px;
+  color: black;
+  padding: 5px;
+  width: 1.5em;
+  margin: -2px;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0px 1px 0px #CCC;
+}
+
+.editor .toolbar a:hover,
+.editor .fore-wrapper:hover,
+.editor .back-wrapper:hover {
+  background: #f2f2f2;
+  border-color: #8c8c8c;
+}
+
+.editor a[data-command='redo'],
+.editor a[data-command='strikeThrough'],
+.editor a[data-command='justifyFull'],
+.editor a[data-command='insertOrderedList'],
+.editor a[data-command='outdent'],
+.editor a[data-command='p'],
+.editor a[data-command='superscript'] {
+  margin-right: 5px;
+  border-radius: 0 3px 3px 0;
+}
+
+.editor a[data-command='undo'],
+.editor .fore-wrapper,
+.editor a[data-command='justifyLeft'],
+.editor a[data-command='insertUnorderedList'],
+.editor a[data-command='indent'],
+.editor a[data-command='h1'],
+.editor a[data-command='subscript'] {
+  border-radius: 3px 0 0 3px;
+}
+
+.editor a.palette-item {
+  height: 1em;
+  border-radius: 3px;
+  margin: 2px;
+  width: 1em;
+  border: 1px solid #CCC;
+}
+
+.editor a.palette-item:hover {
+  border: 1px solid #CCC;
+  box-shadow: 0 0 3px #333;
+}
+
+.editor .fore-palette,
+.editor  .back-palette {
+  display: none;
+}
+
+.editor .fore-wrapper,
+.editor .back-wrapper {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.editor .fore-wrapper:hover .fore-palette,
+.editor .back-wrapper:hover .back-palette {
+  display: block;
+  float: left;
+  position: absolute;
+  padding: 3px;
+  width: 160px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  box-shadow: 0 0 5px #CCC;
+  height: 70px;
+}
+
+.editor .fore-palette a,
+.editor .back-palette a {
+  background: #FFF;
+  margin-bottom: 2px;
+}
