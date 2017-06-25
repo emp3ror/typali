@@ -15,7 +15,7 @@ router.get('/getstring/:id', function (req,res) {
 
 	console.log(req.params.id,id);
 
-	if (id =>length) {
+	if (id >=length) {
 		id = 0;
 	}
 

@@ -35,6 +35,14 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
 
 	var param = $stateParams.param;
 
+	/*param*/
+	
+	if (typeof param == 'undefined' || param == '') {
+		param = Math.floor((Math.random() * 10));
+	}
+
+	console.log("param = ",param);
+
 	vm.isloading = true;
 
 	var isFirstLetter = true;
@@ -68,7 +76,7 @@ function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,da
 
 
     /*promise to get string*/
-    var promise = datafetchService.getString("10");
+    var promise = datafetchService.getString(param);
     promise.then(function (response) {
 
     	var contents = response.data;
