@@ -52,4 +52,20 @@
 
         </div>
     </div>
+    <div class="msgHolder" ng-if="vm.msgbox">
+        <div class="messegebox">
+            <div class="alert alert-info">Congratulation! You completed</div>
+            <div>
+                This text is brought from <b>{{vm.art.title}}</b> by <b>{{vm.art.author}}</b>
+            </div>
+            <div class="">
+                full content is <a href="#">Here</a>
+            </div>
+            <hr>
+            <div>
+                <a ui-sref="app.home()">Home</a>
+                <a ui-sref="app.practise()" target="_self">New</a>
+            </div>
+        </div>
+    </div>
 </div>
