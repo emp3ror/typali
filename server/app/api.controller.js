@@ -13,7 +13,7 @@ router.get('/getstring/:id', function (req,res) {
 
 	var id = parseInt(req.params.id);
 
-	console.log(req.params.id,id);
+	console.log(req.params.id,id,length);
 
 	if (id >=length) {
 		id = 0;
