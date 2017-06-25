@@ -10,8 +10,8 @@
 	function DatafetchService ($http) {
 		var service = this;
 		
-		// var url = "https://typali.herokuapp.com/api/";
-		var url = "http://localhost:8080/api/";
+		var url = "https://typali.herokuapp.com/api/";
+		// var url = "http://localhost:8080/api/";
 
 		/*get string*/
 		service.getString = function (params) {
