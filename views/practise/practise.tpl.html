@@ -17,10 +17,10 @@
 
 
             <div class="writeArea col-md-11 alert" ng-class="{'alert-danger' : vm.alert, 'active': vm.inputFocus}" tabindex='1'>
-                <div class="word">
+                <div class="word" contenteditable="true">
                     {{vm.word}}
                 </div>
-                <div class="blink">l</div>
+                <div class="blink" contenteditable="true">|</div>
 
                 <input type="text" class="" id="typeArea" ng-model='vm.inputChar' ng-blur="vm.inputFocus = false" ng-focus="vm.inputFocus = true; vm.highlightSingleFn()">
             </div>
