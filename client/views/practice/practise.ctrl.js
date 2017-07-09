@@ -4,22 +4,22 @@ angular.module('typali')
 
 .config(['$stateProvider', function($stateProvider) {
 	$stateProvider
-	.state('app.practise', {
-		url:'/practise',
+	.state('app.practice', {
+		url:'/practice',
 		views : {
 			'container@': {
-				templateUrl: 'views/practise/practise.tpl.html',
-				controller: 'practiseCtrl',
+				templateUrl: 'views/practice/practice.tpl.html',
+				controller: 'practiceCtrl',
 				controllerAs : "vm"
 			}
 		}
 	})
-	.state('app.practise.param', {
+	.state('app.practice.param', {
 		url:'/:param',
 		views : {
 			'container@': {
-				templateUrl: 'views/practise/practise.tpl.html',
-				controller: 'practiseCtrl',
+				templateUrl: 'views/practice/practice.tpl.html',
+				controller: 'practiceCtrl',
 				controllerAs : "vm"
 			}
 		}
@@ -27,10 +27,10 @@ angular.module('typali')
   
 }])
 
-.controller('practiseCtrl', PractiseCtrl);
+.controller('practiceCtrl', PracticeCtrl);
 
-PractiseCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout",'$interval','datafetchService'];
-function PractiseCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,datafetchService) {
+PracticeCtrl.$inject = ['$scope','$stateParams','$document',"keyboardlayout",'$interval','datafetchService'];
+function PracticeCtrl ($scope,$stateParams,$document,keyboardlayout,$interval,datafetchService) {
 	var vm = this;
 
 	var param = $stateParams.param;
