@@ -34,7 +34,7 @@ Gross WPM = (All typed Entries/6)/Time
 ### if NVM
 ```bash
 $ source /usr/share/nvm/init-nvm.sh
-nvm use v10.18.0
+$ nvm use v10.18.0
 ```
 
 
