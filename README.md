@@ -31,6 +31,13 @@ Gross WPM = (All typed Entries/6)/Time
 
 ## How to use in local
 
+### if NVM
+```bash
+$ source /usr/share/nvm/init-nvm.sh
+nvm use v10.18.0
+```
+
+
 ### Setup
 
 Install node, npm according to you OS
