@@ -75,7 +75,11 @@ $ gulp prod
 
 ### for gh-pages
  rename index.html to 404.html (hack for github redirect)
- git subtree push --prefix dist origin gh-pages
+ ```
+    $ git subtree push --prefix dist origin gh-pages
+    or force push
+    $ git push origin `git subtree split --prefix dist master`:gh-pages --force
+ ```
 
 
 ## License
