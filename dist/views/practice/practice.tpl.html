@@ -1,0 +1,71 @@
+<div class="container practice">
+    <div class="row">
+        <div class="col-md-9" ng-if="vm.isloading">
+            <img src="assets/img/loading.gif" alt="">
+        </div>
+        <div class="col-md-9" ng-show="!vm.isloading">
+            <div class="text">
+                <span class="" ng-repeat="value in vm.text track by $index">
+                    <span>{{value}}</span>&nbsp;
+                </span>
+
+            </div>
+
+            <div class="showArea">
+                {{vm.sentence}}
+            </div>
+
+
+            <div class="writeArea col-md-11 alert" ng-class="{'alert-danger' : vm.alert, 'active': vm.inputFocus}" tabindex='1'>
+                <div class="word" contenteditable="true">
+                    {{vm.word}}
+                </div>
+                <div class="blink" contenteditable="true">|</div>
+
+                <input type="text" class="" id="typeArea" ng-model='vm.inputChar' ng-blur="vm.inputFocus = false" ng-focus="vm.inputFocus = true; vm.highlightSingleFn()">
+            </div>
+
+
+
+
+            <div class="row dataHolder" id="dataHolder">
+
+            </div>
+
+
+            <div class="col-md-12">
+
+                <!-- <keyboard keyboard="vm.keyboard"></keyboard> -->
+                <keyboard2 keyboard="vm.keyboard" word="vm.highlight" letter="vm.highlightSingle"></keyboard2>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="time">
+                Time : {{vm.time}}
+            </div>
+            <div class="speed">
+                Speed : {{vm.speed}} WPM
+            </div>
+            <div class="">
+                {{vm.timeTaken}} millisecond
+            </div>
+
+        </div>
+    </div>
+    <div class="msgHolder" ng-if="vm.msgbox">
+        <div class="messegebox">
+            <div class="alert alert-info">Congratulation! You completed</div>
+            <div>
+                This text is brought from <b>{{vm.art.title}}</b> by <b>{{vm.art.author}}</b>
+            </div>
+            <div class="">
+                full content is <a href="#">Here</a>
+            </div>
+            <hr>
+            <div>
+                <a ui-sref="app.home()">Home</a>
+                <a ui-sref="app.practice()" target="_self">New</a>
+            </div>
+        </div>
+    </div>
+</div>
