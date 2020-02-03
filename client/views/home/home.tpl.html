@@ -1,5 +1,12 @@
 <div class="container">
 	<div class="row">
+		<select name="lang" id="" ng-model="vm.lang" ng-change="vm.update()"">
+			<option value="unicode" selected>Nepali Unicode</option>
+			<option value="unicodeTraditional">Nepali Unicode Traditional</option>
+		  </select>
+	</div>
+	<div class="row">
+		
 		Home is making, keep checking <a ui-sref="app.practice()">Practice</a>
 	</div>
 </div>

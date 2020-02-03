@@ -2,9 +2,9 @@
 angular.module('typali')
 .controller('HeaderCtrl', HeaderCtrl)
 
-HeaderCtrl.$inject = ['$scope'];
+HeaderCtrl.$inject = ['$scope','$rootScope'];
 
-function HeaderCtrl ($scope) {
+function HeaderCtrl ($scope,$rootScope) {
 	var vm = this;
 
 	

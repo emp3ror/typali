@@ -18,27 +18,16 @@ angular.module('typali')
 }])
 
 .controller('HomeCtrl', HomeCtrl);
-HomeCtrl.$inject = ['$scope'];
-function HomeCtrl ($scope) {
+HomeCtrl.$inject = ['$scope','$rootScope'];
+function HomeCtrl ($scope,$rootScope) {
 	var vm = this;
 
-	/*if (!("Notification" in window)) {
-		alert("This browser does not support desktop notification");
+	$rootScope.lang = "unicode";
+	vm.lang = $rootScope.lang;
+	
+	vm.update = function() {
+		console.log("lang",vm.lang);
+		$rootScope.lang=vm.lang;
+		$rootScope.$broadcast("lang",vm.lang);
 	}
-
-  // Let's check whether notification permissions have already been granted
-  else if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
-    var notification = new Notification("Hi there!");
-}
-
-  // Otherwise, we need to ask the user for permission
-  else if (Notification.permission !== "denied") {
-  	Notification.requestPermission(function (permission) {
-      // If the user accepts, let's create a notification
-      if (permission === "granted") {
-      	var notification = new Notification("Hi there!");
-      }
-  });
-  }*/
 };
