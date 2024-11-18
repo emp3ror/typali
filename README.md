@@ -1,6 +1,6 @@
 # Typali: Nepali typing tutor
 Type+Nepali = typali :D
-
+ 
 # why typali (not typesala)
  typesala.com typeshala.com domains where too high ;)
 
